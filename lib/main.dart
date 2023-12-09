@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:parcel_guru/screens/home_Screen/homeScreen.dart';
-import 'package:parcel_guru/screens/otp_Verification/otpPage.dart';
+import 'package:parcel_guru/screens/SplashScreen/splashScreen.dart';
+import 'package:parcel_guru/screens/forgot_password_screen/forgot_password.dart';
 import 'package:parcel_guru/screens/signup/signup.dart';
-import 'package:parcel_guru/screens/skeleton_Bottom_Navigation/bottom_navigation.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +21,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         fontFamily: 'Inter'
       ),
-      home:  bottomNavigation(),
+      home: const splashScreen(),
     );
   }
 }
