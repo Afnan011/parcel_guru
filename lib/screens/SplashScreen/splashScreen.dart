@@ -1,5 +1,5 @@
 import 'dart:async';
-
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:parcel_guru/onboarding/onboarding.dart';
 
@@ -11,11 +11,14 @@ class splashScreen extends StatefulWidget {
 }
 
 class _splashScreenState extends State<splashScreen> {
+
   @override
   void initState() {
     
     super.initState();
+
     Timer(Duration(seconds: 5),(){
+      
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => onboarding(),));
     });
   }
@@ -25,7 +28,7 @@ class _splashScreenState extends State<splashScreen> {
       backgroundColor: Color(0xff21252C),
       body: Center(
         child: Container(
-          child: Image.asset("assets/images/parcel_guru.png",scale: 1.2,),
+          child: ElasticIn(child: Image.asset("assets/images/parcel_guru.png",scale: 1.2,),duration: Duration(seconds: 2),),
         ),
       ),
     );
