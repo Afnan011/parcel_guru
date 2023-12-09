@@ -1,0 +1,7 @@
+color white: Color(0xFFEFF1F4)
+
+color background: Color(0xff141924)
+
+hint text color : Color(0xff8A9199)
+
+textfiled
