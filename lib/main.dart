@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:parcel_guru/screens/SplashScreen/splashScreen.dart';
 
+
 void main() {
   runApp(const MyApp());
 }
