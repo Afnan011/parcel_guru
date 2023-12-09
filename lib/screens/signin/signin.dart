@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:parcel_guru/screens/signup/signup.dart';
+import 'package:parcel_guru/screens/skeleton_Bottom_Navigation/bottom_navigation.dart';
 import 'package:parcel_guru/widgets/button_primary.dart';
 import '../forgot_password_screen/forgot_password.dart';
 
@@ -236,6 +237,7 @@ class _SignInState extends State<SignIn> {
                         btnText: "Sign In",
                         onPressed: () {
                           if(formKey.currentState!.validate()){}
+                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => bottomNavigation(),));
                         })
                 ),
                 const SizedBox(

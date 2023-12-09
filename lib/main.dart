@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:parcel_guru/screens/SplashScreen/splashScreen.dart';
 import 'package:parcel_guru/screens/home_Screen/homeScreen.dart';
 import 'package:parcel_guru/screens/otp_Verification/otpPage.dart';
 import 'package:parcel_guru/screens/signup/signup.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         fontFamily: 'Inter'
       ),
-      home:  bottomNavigation(),
+      home:  splashScreen(),
     );
   }
 }
