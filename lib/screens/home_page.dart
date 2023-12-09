@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-// import 'package:parcel_guru/screens/SignInScreen/sign_in.dart';
-import 'package:parcel_guru/screens/forgot_password_screen/sign_in.dart';
+// import 'package:parcel_guru/screens/SignInScreen/forgot_password.dart';
+import 'package:parcel_guru/screens/forgot_password_screen/forgot_password.dart';
 import 'package:parcel_guru/screens/signin/signin.dart';
 
 
