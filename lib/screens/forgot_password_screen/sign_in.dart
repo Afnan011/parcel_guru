@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:parcel_guru/widgets/button_primary.dart';
 
 class ForgotPassword extends StatefulWidget {
   const ForgotPassword({super.key});
@@ -65,7 +67,7 @@ class _SignInState extends State<ForgotPassword> {
                 ),
               ),
               const SizedBox(
-                height: 26,
+                height: 56,
               ),
               const Padding(
                 padding: EdgeInsets.only(right: 150),
@@ -85,6 +87,10 @@ class _SignInState extends State<ForgotPassword> {
               SizedBox(
                 width: 276,
                 child: TextField(
+                  maxLength: 10,
+                  inputFormatters: [
+                    LengthLimitingTextInputFormatter(10)
+                  ],
                   style: const TextStyle(
                     color: Colors.white,
                     fontFamily: 'Inter',
@@ -95,6 +101,14 @@ class _SignInState extends State<ForgotPassword> {
                   decoration: InputDecoration(
                     fillColor: const Color(0xff2B303A),
                     filled: true,
+                    prefixText: "+91 ",
+                    prefixStyle: const TextStyle(
+                        color: Color(0xffEFF1F4),
+                        fontSize: 16,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w400
+
+                    ),
                     hintText: "Enter phone number",
                     hintStyle: const TextStyle(
                       color: Color(0xff8A9199),
@@ -106,13 +120,14 @@ class _SignInState extends State<ForgotPassword> {
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8),
                       borderSide: const BorderSide(
-                        width: 1,
+                        width:0,
+                        color: Color(0xffFF7C7C)
                       ),
                     ),
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8),
                       borderSide: const BorderSide(
-                        width: 1,
+                        width: 0, color: Color(0xff8A9199)
                       ),
                     ),
                   ),
@@ -130,42 +145,22 @@ class _SignInState extends State<ForgotPassword> {
                 ),
               ),
               const SizedBox(
-                height: 22,
+                height: 32,
               ),
               SizedBox(
                 width: 276,
                 height: 52,
-                child: ElevatedButton(
-                  onPressed: () {
-                    //do something
+                child: PrimaryButton(onPressed: (){
+                  setState(() {
                     showError();
-                    setState(() {});
-                  },
-                  style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.orange),
-                    foregroundColor:
-                        MaterialStateProperty.all<Color>(Colors.black54),
-                    padding: MaterialStateProperty.all<EdgeInsets>(
-                        const EdgeInsets.all(16)),
-                    shape: MaterialStateProperty.all<OutlinedBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                    ),
-                  ),
-                  child: const Text(
-                    "Continue",
-                    style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w900,
-                        fontFamily: 'Inter',
-                        color: Color(0xff21252C)),
-                  ),
-                ),
+                  });
+                  // if(flag==false){
+                  //   Navigator.push(context, MaterialPageRoute(builder: (context)=>const OTP()))
+                  // }
+                }, btnText: "Continue",)
               ),
               const SizedBox(
-                height: 12,
+                height: 32,
               ),
               Expanded(
                 child: RichText(
@@ -176,14 +171,14 @@ class _SignInState extends State<ForgotPassword> {
                           text: 'Remembered password?',
                           style: TextStyle(
                               fontFamily: 'Inter',
-                              fontSize: 16,
+                              fontSize: 14,
                               color: Color(0xff8A9199),
                               fontWeight: FontWeight.w100)),
                       TextSpan(
                         text: ' Sign In',
                         style: TextStyle(
                             fontFamily: 'Inter',
-                            fontSize: 16,
+                            fontSize: 14,
                             color: Colors.white,
                             fontWeight: FontWeight.w100),
                       )

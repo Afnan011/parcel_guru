@@ -33,6 +33,7 @@ class PrimaryButton extends StatelessWidget {
             child: Text(
               btnText,
               style: const TextStyle(
+                fontFamily: 'Inter',
                   fontSize: 16,
                   color: Color(0XFF21252C),
                   fontWeight: FontWeight.w600),
