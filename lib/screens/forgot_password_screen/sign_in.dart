@@ -17,14 +17,13 @@ class _SignInState extends State<ForgotPassword> {
       msg = showTextError;
       flag = true;
     } else {
-      msg = "Valid Number";
+      msg = "";
       flag = false;
     }
   }
+
   @override
   Widget build(BuildContext context) {
-
-
     return Scaffold(
       // appBar: AppBar(
       //   backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -33,7 +32,7 @@ class _SignInState extends State<ForgotPassword> {
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        color: Colors.black,
+        color: const Color(0xff141924),
         margin: const EdgeInsets.all(0),
         child: Padding(
           padding: const EdgeInsets.only(top: 150),
@@ -43,7 +42,11 @@ class _SignInState extends State<ForgotPassword> {
             children: [
               const Text(
                 "Forgot Password?",
-                style: TextStyle(fontSize: 24, color: Colors.white),
+                style: TextStyle(
+                    fontSize: 24,
+                    color: Colors.white,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w600),
               ),
               const Padding(
                 padding: EdgeInsets.only(top: 20),
@@ -53,6 +56,8 @@ class _SignInState extends State<ForgotPassword> {
                     "Enter your phone number, and we will send an OTP",
                     style: TextStyle(
                       fontSize: 14,
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.w400,
                       color: Colors.white54,
                     ),
                     textAlign: TextAlign.center,
@@ -68,8 +73,9 @@ class _SignInState extends State<ForgotPassword> {
                   "Phone Number",
                   style: TextStyle(
                       fontSize: 16,
-                      fontWeight: FontWeight.w300,
-                      color: Colors.white),
+                      fontWeight: FontWeight.w500,
+                      color: Colors.white,
+                  fontFamily: 'Inter'),
                   textAlign: TextAlign.right,
                 ),
               ),
@@ -78,53 +84,57 @@ class _SignInState extends State<ForgotPassword> {
               ),
               SizedBox(
                 width: 276,
-                child: Align(
-                  alignment: Alignment.topCenter,
-                  child: TextField(
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontFamily: 'Inter',
+                child: TextField(
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontFamily: 'Inter',
+                    fontSize: 16,
+                  ),
+                  controller: forgotPassword,
+                  keyboardType: TextInputType.phone,
+                  decoration: InputDecoration(
+                    fillColor: const Color(0xff2B303A),
+                    filled: true,
+                    hintText: "Enter phone number",
+                    hintStyle: const TextStyle(
+                      color: Color(0xff8A9199),
                       fontSize: 16,
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.w400
+
                     ),
-                    controller: forgotPassword,
-                    keyboardType: TextInputType.phone,
-                    decoration: InputDecoration(
-                      fillColor: const Color(0xff2B303A),
-                      filled: true,
-                      hintText: "Enter phone number",
-                      hintStyle: const TextStyle(
-                        color: Color(0xff8A9199),
-                        fontSize: 16,
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: const BorderSide(
+                        width: 1,
                       ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8),
-                        borderSide: const BorderSide(
-                          width: 1,
-                        ),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8),
-                        borderSide: const BorderSide(
-                          width: 1,
-                        ),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: const BorderSide(
+                        width: 1,
                       ),
                     ),
                   ),
                 ),
               ),
-              Text(
-                msg,
-                style: TextStyle(
-                    fontFamily: 'Inter',
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                    color: flag ? Colors.red : Colors.green),
+              Padding(
+                padding: const EdgeInsets.only(right: 27,top: 8),
+                child: Text(
+                  msg,
+                  style: const TextStyle(
+                      fontFamily: 'Inter',
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xffFF7C7C)),
+                ),
               ),
               const SizedBox(
                 height: 22,
               ),
               SizedBox(
                 width: 276,
+                height: 52,
                 child: ElevatedButton(
                   onPressed: () {
                     //do something
@@ -148,7 +158,7 @@ class _SignInState extends State<ForgotPassword> {
                     "Continue",
                     style: TextStyle(
                         fontSize: 16,
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w900,
                         fontFamily: 'Inter',
                         color: Color(0xff21252C)),
                   ),
@@ -170,14 +180,12 @@ class _SignInState extends State<ForgotPassword> {
                               color: Color(0xff8A9199),
                               fontWeight: FontWeight.w100)),
                       TextSpan(
-
                         text: ' Sign In',
                         style: TextStyle(
                             fontFamily: 'Inter',
                             fontSize: 16,
                             color: Colors.white,
                             fontWeight: FontWeight.w100),
-
                       )
                     ])),
               )
