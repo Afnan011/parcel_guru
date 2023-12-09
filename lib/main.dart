@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:parcel_guru/screens/SplashScreen/splashScreen.dart';
-
+import 'package:parcel_guru/screens/signup/signup.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +19,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         fontFamily: 'Inter'
       ),
-      home: const splashScreen(),
+      home: const MySignUpPage(),
     );
   }
 }
