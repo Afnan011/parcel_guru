@@ -1,7 +1,24 @@
 import 'package:flutter/material.dart';
 
-class SignIn extends StatelessWidget {
+class SignIn extends StatefulWidget {
   const SignIn({super.key});
+
+  @override
+  State<SignIn> createState() => _SignInState();
+}
+
+class _SignInState extends State<SignIn> {
+
+  bool _obscureText = false;
+  var eyeIcon = Icons.visibility_outlined;
+
+  void togglePassword() {
+    setState(() {
+      eyeIcon =  _obscureText ? Icons.visibility_outlined : Icons.visibility_off_outlined;
+      print(_obscureText);
+      _obscureText = !_obscureText;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,10 +45,10 @@ class SignIn extends StatelessWidget {
               Container(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 12.0, vertical: 4.0),
-                child: const Column(
+                child:  Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       "Phone Number",
                       style: TextStyle(
                           color: Color(0xFFEFF1F4),
@@ -39,16 +56,16 @@ class SignIn extends StatelessWidget {
                           fontSize: 16),
                     ),
 
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
 
                     TextField(
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontSize: 16,
                           color: Color(0xFFEFF1F4),
                           fontWeight: FontWeight.w400),
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                           hintText: "Enter phone number",
                           filled: true,
                           fillColor: Color(0xFF2B303A),
@@ -85,6 +102,8 @@ class SignIn extends StatelessWidget {
                       height: 5,
                     ),
                     TextField(
+                      obscureText: _obscureText,
+                      obscuringCharacter: '*',
                       style: const TextStyle(
                           fontSize: 16,
                           color: Color(0xFFEFF1F4),
@@ -92,16 +111,19 @@ class SignIn extends StatelessWidget {
                       decoration: InputDecoration(
                           hintText: "Enter password",
                           filled: true,
-                          fillColor: Color(0xFF2B303A),
+                          fillColor: const Color(0xFF2B303A),
                           hintStyle: const TextStyle(
                               fontSize: 16,
                               color: Color(0xff8A9199),
                               fontWeight: FontWeight.w400
                           ),
-                          border: OutlineInputBorder(
+                          border: const OutlineInputBorder(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(10))),
-                          suffixIcon: IconButton(onPressed: (){}, icon: icon)
+                          suffixIcon: IconButton(
+                              onPressed: togglePassword,
+                              icon:  Icon(eyeIcon, color: const Color(0xFFBABFC5),)
+                          ),
                       ),
                     )
                   ],
