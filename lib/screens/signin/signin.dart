@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:parcel_guru/screens/signup/signup.dart';
+import 'package:parcel_guru/widgets/button_primary.dart';
+
+import '../signup/signup.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({super.key});
@@ -8,14 +12,14 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
-
   bool _obscureText = false;
   var eyeIcon = Icons.visibility_outlined;
 
   void togglePassword() {
     setState(() {
-      eyeIcon =  _obscureText ? Icons.visibility_outlined : Icons.visibility_off_outlined;
-      print(_obscureText);
+      eyeIcon = _obscureText
+          ? Icons.visibility_outlined
+          : Icons.visibility_off_outlined;
       _obscureText = !_obscureText;
     });
   }
@@ -41,62 +45,65 @@ class _SignInState extends State<SignIn> {
                   ),
                 ),
               ),
-
               Container(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 12.0, vertical: 4.0),
-                child:  Column(
+                    const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4.0),
+                child: const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
+                    Text(
                       "Phone Number",
                       style: TextStyle(
                           color: Color(0xFFEFF1F4),
                           fontWeight: FontWeight.w500,
                           fontSize: 16),
                     ),
-
-                    const SizedBox(
+                    SizedBox(
                       height: 5,
                     ),
-
                     TextField(
-                      style: const TextStyle(
+                      keyboardType: TextInputType.phone,
+                      style: TextStyle(
                           fontSize: 16,
                           color: Color(0xFFEFF1F4),
                           fontWeight: FontWeight.w400),
-                      decoration: const InputDecoration(
-                          hintText: "Enter phone number",
-                          filled: true,
-                          fillColor: Color(0xFF2B303A),
-                          hintStyle: TextStyle(
-                              fontSize: 16,
-                              color: Color(0xff8A9199),
-                              fontWeight: FontWeight.w400),
-                          border: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10)))),
+                      decoration: InputDecoration(
+                        hintText: "Enter phone number",
+                        filled: true,
+                        fillColor: Color(0xFF2B303A),
+                        hintStyle: TextStyle(
+                            fontSize: 16,
+                            color: Color(0xff8A9199),
+                            fontWeight: FontWeight.w400),
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Color(0xff141924)),
+                            borderRadius:
+                            BorderRadius.all(Radius.circular(10))),
+                        focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Color(0xFF6D7688)),
+                            borderRadius:
+                            BorderRadius.all(Radius.circular(10))),
+                      ),
                     )
                   ],
                 ),
               ),
-
               const SizedBox(
                 height: 15,
               ),
-
               Container(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 12.0, vertical: 4.0),
-                child:  Column(
+                    const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4.0),
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text(
                       "Password",
                       style: TextStyle(
-                          color: Color(0xFFEFF1F4),
-                          fontWeight: FontWeight.w500,
-                          fontSize: 16),
+                        color: Color(0xFFEFF1F4),
+                        fontWeight: FontWeight.w500,
+                        fontSize: 16,
+                      ),
                     ),
                     const SizedBox(
                       height: 5,
@@ -109,32 +116,37 @@ class _SignInState extends State<SignIn> {
                           color: Color(0xFFEFF1F4),
                           fontWeight: FontWeight.w400),
                       decoration: InputDecoration(
-                          hintText: "Enter password",
-                          filled: true,
-                          fillColor: const Color(0xFF2B303A),
-                          hintStyle: const TextStyle(
-                              fontSize: 16,
-                              color: Color(0xff8A9199),
-                              fontWeight: FontWeight.w400
-                          ),
-                          border: const OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10))),
-                          suffixIcon: IconButton(
-                              onPressed: togglePassword,
-                              icon:  Icon(eyeIcon, color: const Color(0xFFBABFC5),)
-                          ),
+                        hintText: "Enter password",
+                        filled: true,
+                        fillColor: const Color(0xFF2B303A),
+                        hintStyle: const TextStyle(
+                            fontSize: 16,
+                            color: Color(0xff8A9199),
+                            fontWeight: FontWeight.w400),
+                        enabledBorder: const OutlineInputBorder(
+                            borderSide: BorderSide(color: Color(0xff141924)),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(10))),
+                        focusedBorder: const OutlineInputBorder(
+                            borderSide: BorderSide(color: Color(0xFF6D7688)),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(10))),
+                        suffixIcon: IconButton(
+                            onPressed: togglePassword,
+                            icon: Icon(
+                              eyeIcon,
+                              color: const Color(0xFFBABFC5),
+                            )),
                       ),
                     )
                   ],
                 ),
               ),
-
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     child: TextButton(
                       onPressed: () {},
                       child: const Text(
@@ -148,34 +160,18 @@ class _SignInState extends State<SignIn> {
                   ),
                 ],
               ),
-
               const SizedBox(
                 height: 30,
               ),
-
               Container(
-                  width: double.infinity,
-                  height: 55,
-                  padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 4.0),
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFFF98017)
-                    ),
-                    child: const Text(
-                      "Sign In",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 16,
-                        color: Color(0XFF21252C),
-                      ),
-                    ),
-                  )),
-
-              const SizedBox(
-                height: 30,
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: PrimaryButton(
+                      btnText: "Sign In",
+                      onPressed: () {})
               ),
-
+              const SizedBox(
+                height: 15,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -189,19 +185,23 @@ class _SignInState extends State<SignIn> {
                     ),
                   ),
                   TextButton(
-                      onPressed: (){},
-                      child: const Text(
-                        "Create account",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 14,
-                          color: Color(0xFFEFF1F4),
-                        ),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const MySignUpPage()));
+                    },
+                    child: const Text(
+                      "Create account",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 14,
+                        color: Color(0xFFEFF1F4),
                       ),
+                    ),
                   ),
                 ],
               )
-
             ],
           ),
         ),
