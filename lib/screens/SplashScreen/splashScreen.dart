@@ -25,7 +25,7 @@ class _splashScreenState extends State<splashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
 
-      backgroundColor: Color(0xff21252C),
+      backgroundColor: Color(0xff141924),
       body: Center(
         child: Container(
           child: ElasticIn(child: Image.asset("assets/images/parcel_guru.png",scale: 1.2,),duration: Duration(seconds: 2),),
