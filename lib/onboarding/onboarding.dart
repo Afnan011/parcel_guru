@@ -50,13 +50,13 @@ class _onboardingState extends State<onboarding> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff141924),
+      backgroundColor: const Color(0xff141924),
       appBar: AppBar(
-        backgroundColor: Color(0xff141924),
+        backgroundColor: const Color(0xff141924),
         actions: [
           TextButton(
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => SignIn(),));
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const SignIn(),));
               },
               child: Padding(
                 padding: const EdgeInsets.only(top: 20.0, right: 8.0),
@@ -79,7 +79,7 @@ class _onboardingState extends State<onboarding> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset(onboardcontents[index]['image']),
-                  SizedBox(
+                  const SizedBox(
                     height: 80,
                   ),
                   Text(
@@ -90,10 +90,10 @@ class _onboardingState extends State<onboarding> {
                         fontFamily: 'Inter',
                         color: titleColor),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
-                  Container(
+                  SizedBox(
                     width: double.infinity,
                     child: Padding(
                       padding: const EdgeInsets.only(left: 25.0, right: 25.0),
@@ -109,7 +109,7 @@ class _onboardingState extends State<onboarding> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 80,
                   ),
                 ],
@@ -134,7 +134,7 @@ class _onboardingState extends State<onboarding> {
                               Navigator.pushReplacement(context,
                                   MaterialPageRoute(
                                 builder: (context) {
-                                  return SignIn();
+                                  return const SignIn();
                                 },
                               ));
                             },
@@ -207,15 +207,15 @@ class _onboardingState extends State<onboarding> {
                   children:
                       List<Widget>.generate(onboardcontents.length, (index) {
                     return AnimatedContainer(
-                      duration: Duration(milliseconds: 200),
+                      duration: const Duration(milliseconds: 200),
                       height: 4,
                       width: (index == currentPage) ? 30 : 20,
-                      margin: EdgeInsets.symmetric(horizontal: 5),
+                      margin: const EdgeInsets.symmetric(horizontal: 5),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(5),
                           color: (index == currentPage)
-                              ? Color(0xFFEFF1F4)
-                              : Color(0xff2b303a)),
+                              ? const Color(0xFFEFF1F4)
+                              : const Color(0xff2b303a)),
                     );
                   }),
                 ),
