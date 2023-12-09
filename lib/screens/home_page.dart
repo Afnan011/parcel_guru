@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+// import 'package:parcel_guru/screens/SignInScreen/sign_in.dart';
+import 'package:parcel_guru/screens/forgot_password_screen/sign_in.dart';
 
 
 class MyHomePage extends StatefulWidget {
@@ -20,8 +22,17 @@ class _MyHomePageState extends State<MyHomePage> {
           title: const Text('parcel guru'),
         ),
         body:
-        const Center(
-          child: Text("Parcel Guru"),
+        Column(
+          children: [
+             const Center(
+              child: Text("Parcel Guru"),
+            ),
+            ElevatedButton(onPressed: (){
+              Navigator.push(
+                context,MaterialPageRoute(builder: (context)=>const ForgotPassword())
+              );
+            }, child: const Text("SignIn "))
+          ],
         )
     );
   }
