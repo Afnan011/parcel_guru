@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:parcel_guru/screens/otp/otp.dart';
+import 'package:parcel_guru/screens/SplashScreen/splashScreen.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         fontFamily: 'Inter'
       ),
-      home: const MyOtp(),
+      home: const splashScreen(),
     );
   }
 }
