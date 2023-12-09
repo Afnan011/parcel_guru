@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:parcel_guru/screens/signup/signup.dart';
 import 'package:parcel_guru/widgets/button_primary.dart';
+
+import '../signup/signup.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({super.key});
@@ -17,7 +20,6 @@ class _SignInState extends State<SignIn> {
       eyeIcon = _obscureText
           ? Icons.visibility_outlined
           : Icons.visibility_off_outlined;
-      print(_obscureText);
       _obscureText = !_obscureText;
     });
   }
@@ -45,7 +47,7 @@ class _SignInState extends State<SignIn> {
               ),
               Container(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 12.0, vertical: 4.0),
+                    const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4.0),
                 child: const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -73,14 +75,14 @@ class _SignInState extends State<SignIn> {
                             fontSize: 16,
                             color: Color(0xff8A9199),
                             fontWeight: FontWeight.w400),
-                        border: OutlineInputBorder(
+                        enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Color(0xff141924)),
                             borderRadius:
-                                BorderRadius.all(Radius.circular(10))),
+                            BorderRadius.all(Radius.circular(10))),
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xFFF98017)),
+                            borderSide: BorderSide(color: Color(0xFF6D7688)),
                             borderRadius:
-                                BorderRadius.all(Radius.circular(10))),
+                            BorderRadius.all(Radius.circular(10))),
                       ),
                     )
                   ],
@@ -91,7 +93,7 @@ class _SignInState extends State<SignIn> {
               ),
               Container(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 12.0, vertical: 4.0),
+                    const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -121,12 +123,12 @@ class _SignInState extends State<SignIn> {
                             fontSize: 16,
                             color: Color(0xff8A9199),
                             fontWeight: FontWeight.w400),
-                        border: const OutlineInputBorder(
+                        enabledBorder: const OutlineInputBorder(
                             borderSide: BorderSide(color: Color(0xff141924)),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(10))),
                         focusedBorder: const OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xFFF98017)),
+                            borderSide: BorderSide(color: Color(0xFF6D7688)),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(10))),
                         suffixIcon: IconButton(
@@ -144,7 +146,7 @@ class _SignInState extends State<SignIn> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     child: TextButton(
                       onPressed: () {},
                       child: const Text(
@@ -162,13 +164,11 @@ class _SignInState extends State<SignIn> {
                 height: 30,
               ),
               Container(
-                  width: double.infinity,
-                  height: 55,
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 12.0, vertical: 4.0),
-                  child: PrimaryButton(btnText: "Sign In", onPressed: (){})
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: PrimaryButton(
+                      btnText: "Sign In",
+                      onPressed: () {})
               ),
-
               const SizedBox(
                 height: 15,
               ),
@@ -185,7 +185,12 @@ class _SignInState extends State<SignIn> {
                     ),
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const MySignUpPage()));
+                    },
                     child: const Text(
                       "Create account",
                       style: TextStyle(
