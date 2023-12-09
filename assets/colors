@@ -9,3 +9,5 @@ text-field bg color : 0xFF2B303A
 primary: 0xFFF98017
 
 text primary: 0XFF21252C
+
+text error : 0XFFFF7C7C
