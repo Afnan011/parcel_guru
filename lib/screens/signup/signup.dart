@@ -39,10 +39,10 @@ class _MyHomePageState extends State<MySignUpPage> {
                 padding: const EdgeInsets.only(top: 30),
                 child: Column(
                   children: [
-                    Column(
+                    const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Padding(
+                        Padding(
                           padding: EdgeInsets.only(left: 20),
                           child: Text(
                             'Name',
@@ -54,34 +54,37 @@ class _MyHomePageState extends State<MySignUpPage> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(
-                              top: 15, bottom: 15, left: 16, right: 16),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 16,vertical: 15),
                           child: TextField(
-                            style: const TextStyle(color: Color(0xFFEFF1F4)),
+                            style: TextStyle(color: Color(0xFFEFF1F4)),
                             keyboardType: TextInputType.text,
                             decoration: InputDecoration(
                               hintText: 'Enter Name',
                               hintStyle:
-                                  const TextStyle(color: Color(0xFFEFF1F4)),
+                                  TextStyle(color: Color(0xFFEFF1F4)),
                               labelStyle:
-                                  const TextStyle(color: Color(0xff8A9199)),
-                              fillColor: const Color(0xff2B303A),
+                                  TextStyle(color: Color(0xff8A9199)),
+                              fillColor: Color(0xff2B303A),
                               filled: true,
-                              focusedBorder: const OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Color(0xffF98017)),
-                              ),
                               enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10)),
+                                  borderSide: BorderSide(color: Color(0xff141924)),
+                                  borderRadius:
+                                  BorderRadius.all(Radius.circular(10))),
+                              focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Color(0xFF6D7688)),
+                                  borderRadius:
+                                  BorderRadius.all(Radius.circular(10))),
+
                             ),
                           ),
                         ),
                       ],
                     ),
-                    Column(
+                    const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Padding(
+                        Padding(
                           padding: EdgeInsets.only(left: 20),
                           child: Text(
                             'Phone Number',
@@ -93,24 +96,27 @@ class _MyHomePageState extends State<MySignUpPage> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(
-                              top: 15, bottom: 15, left: 16, right: 16),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 16,vertical: 15),
                           child: TextField(
-                            style: const TextStyle(color: Color(0xFFEFF1F4)),
+                            style: TextStyle(color: Color(0xFFEFF1F4)),
                             keyboardType: TextInputType.phone,
                             decoration: InputDecoration(
                               hintText: 'Enter phone number',
                               hintStyle:
-                                  const TextStyle(color: Color(0xFFEFF1F4)),
+                                  TextStyle(color: Color(0xFFEFF1F4)),
                               labelStyle:
-                                  const TextStyle(color: Color(0xff8A9199)),
-                              fillColor: const Color(0xff2B303A),
+                                  TextStyle(color: Color(0xff8A9199)),
+                              fillColor: Color(0xff2B303A),
                               filled: true,
-                              focusedBorder: const OutlineInputBorder(
-                                  borderSide:
-                                      BorderSide(color: Color(0xffF98017))),
                               enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10)),
+                                  borderSide: BorderSide(color: Color(0xff141924)),
+                                  borderRadius:
+                                  BorderRadius.all(Radius.circular(10))),
+                              focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Color(0xFF6D7688)),
+                                  borderRadius:
+                                  BorderRadius.all(Radius.circular(10))),
                             ),
                           ),
                         ),
@@ -131,8 +137,8 @@ class _MyHomePageState extends State<MySignUpPage> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(
-                              top: 15, bottom: 15, left: 16, right: 16),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 16,vertical: 15),
                           child: TextField(
                             style: const TextStyle(color: Color(0xFFEFF1F4)),
                             obscureText: obscureText,
@@ -148,8 +154,8 @@ class _MyHomePageState extends State<MySignUpPage> {
                               suffixIcon: IconButton(
                                 icon: Icon(
                                     obscureText
-                                        ? Icons.visibility
-                                        : Icons.visibility_off,
+                                        ? Icons.visibility_outlined
+                                        : Icons.visibility_off_outlined,
                                     color: const Color(0xffEFF1F4)),
                                 onPressed: () {
                                   setState(() {
@@ -157,11 +163,14 @@ class _MyHomePageState extends State<MySignUpPage> {
                                   });
                                 },
                               ),
+                              enabledBorder: const OutlineInputBorder(
+                                  borderSide: BorderSide(color: Color(0xff141924)),
+                                  borderRadius:
+                                  BorderRadius.all(Radius.circular(10))),
                               focusedBorder: const OutlineInputBorder(
-                                  borderSide:
-                                      BorderSide(color: Color(0xffF98017))),
-                              enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10)),
+                                  borderSide: BorderSide(color: Color(0xFF6D7688)),
+                                  borderRadius:
+                                  BorderRadius.all(Radius.circular(10))),
                             ),
                           ),
                         ),
@@ -182,37 +191,39 @@ class _MyHomePageState extends State<MySignUpPage> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(
-                              top: 15, bottom: 15, left: 16, right: 16),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 16,vertical: 15),
                           child: TextField(
                             style: const TextStyle(color: Color(0xFFEFF1F4)),
                             obscureText: obscureText,
                             keyboardType: TextInputType.text,
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                               hintText: 'Enter password',
                               hintStyle:
-                                  const TextStyle(color: Color(0xFFEFF1F4)),
+                                  TextStyle(color: Color(0xFFEFF1F4)),
                               labelStyle:
-                                  const TextStyle(color: Color(0xff8A9199)),
-                              fillColor: const Color(0xff2B303A),
+                                  TextStyle(color: Color(0xff8A9199)),
+                              fillColor: Color(0xff2B303A),
                               filled: true,
-                              focusedBorder: const OutlineInputBorder(
-                                  borderSide:
-                                      BorderSide(color: Color(0xffF98017))),
                               enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10)),
+                                  borderSide: BorderSide(color: Color(0xff141924)),
+                                  borderRadius:
+                                  BorderRadius.all(Radius.circular(10))),
+                              focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Color(0xFF6D7688)),
+                                  borderRadius:
+                                  BorderRadius.all(Radius.circular(10))),
                             ),
                           ),
                         ),
                       ],
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(
-                          top: 15, bottom: 10, right: 20, left: 20),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16,vertical: 15),
                       child: PrimaryButton(
                           btnHeight: 55,
                           onPressed: () {
-                            print('object');
                           },
                           btnText: 'Sign in'),
                     ),
@@ -226,3 +237,4 @@ class _MyHomePageState extends State<MySignUpPage> {
     );
   }
 }
+
